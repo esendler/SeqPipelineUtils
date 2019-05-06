@@ -2,7 +2,7 @@
 # ../names.txt has all sample names
 
 counts<-data.frame("Filename"=character(0), "Sorted"=integer(0), "Quality"=integer(0), "Clean"=integer(0))
-names<-readLines("names.txt")
+names<-readLines("names_ind.txt")
 
 setwd("bams")
 for (Filename in names) {
@@ -51,7 +51,7 @@ countsMelted$Total.Reads<-countsMelted$Total.Reads  #(already changed paired rea
 system(paste0("mkdir -p Plots"))
 setwd("Plots")
 
-pdf("all_counts.pdf",width=12,height=16)
+pdf("Indiv_counts.pdf",width=12,height=16)
 p <- ggplot(data = countsMelted, aes(x = Filename, y = value, fill = factor(variable))) + geom_bar(stat="identity") + coord_flip() +
       geom_point(data=countsMelted, aes(y = Total.Reads, x=Filename))
 p
@@ -65,6 +65,6 @@ clean$Percent<-clean$Clean/clean$Total.Reads
 
 pdf("Percent Clean Mapped.pdf")
 p <- ggplot(clean, aes(Total.Reads, Clean/Total.Reads))
-p + geom_point() + labs(title = "Fraction Clean Mapped", x = "Total Reads", y = "Fraction Clean Mapped")
+p + geom_point() + labs(title = "Indiv-Fraction Clean Mapped", x = "Total Reads", y = "Fraction Clean Mapped")
 dev.off()
 
