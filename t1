@@ -1,0 +1,1000 @@
+  104  ls
+  105  cd ..
+  106  ls
+  107  cd ..
+  108  ls
+  109  cd gencove_new
+  110  ls
+  111  cd vcf
+  112  ls
+  113  cd ..
+  114  cd /nfs/rprdata/scilab/CC1-Placenta/gencove_merge_123/
+  115  ls
+  116  mv merged.final.vcf.gz Placenta.12.dupsRem.vcf.gz
+  117  vi readme 
+  118  du -sh *gz
+  119  cd /nfs/rprdata/ALOFT/gencove/vcf/
+  120  ls
+  121  cd NewVCF-2XSNPs-Final/
+  122  ls
+  123  less readme 
+  124  less AL-026.pos.sorted.vcf.gz|wc -l
+  125  less readme 
+  126  less rename2.txt 
+  127  less AL-026.pos.vcf.gz |grep -v "^#"|wc -l
+  128  less merge2.reheader.vcf.gz |grep -v "^#"|wc -l
+  129  less merge5.reheader.vcf.gz |grep -v "^#"|wc -l
+  130  less merge5.vcf.gz |grep -v "^#"|wc -l
+  131  less merged5.vcf.gz |grep -v "^#"|wc -l
+  132  qsub -I -q wsuq -l nodes=1:ppn=2 -l mem=100g
+  133  cd ..
+  134  cd /nfs/rprdata/scilab/CC1-Placenta/gencove_old_new/merge_vcf/
+  135  ls
+  136  ls *R
+  137  cp gtcheck.v2-dendr.R /nfs/rprdata/scilab/CC1-Placenta/gencove_merge_123/
+  138  cd gtcheck.v2-dendr.R /nfs/rprdata/scilab/CC1-Placenta/gencove_merge_123/
+  139  cd /nfs/rprdata/scilab/CC1-Placenta/gencove_merge_123/
+  140  ls
+  141  vi readme
+  142  cd ..
+  143  ls
+  144  cd gencove_old_new/
+  145  ls
+  146  cd merge_vcf/
+  147  ls
+  148  less gtcheck.howto
+  149  less *R
+  150  freenodes
+  151  head GencodeID_to_CorrectSample.txt 
+  152  qme
+  153  cd ..
+  154  ls
+  155  cd gencove_merge_123/
+  156  ls
+  157  less Placenta.3.dupsRem.vcf.gz
+  158  less Placenta.123.dupsRem.vcf.gz 
+  159  ls
+  160  less gtcheck.howto 
+  161  ssh wsu207
+  162  less Placenta.123.dupsRem.vcf.gz 
+  163  cd ../
+  164  ls
+  165  cd gencove_old_new/
+  166  ls
+  167  cd merge_vcf/
+  168  ls
+  169  less scilab.gtcheck.txt 
+  170  less gtcheck.howto
+  171  less merged.vcf.gz
+  172  qme
+  173  cd ..
+  174  ls
+  175  cd ..
+  176  cd rprdata/ALOFT/
+  177  cd gencove.AloftHoldPrb.2019-03-22/
+  178  ls
+  179  cd vcf
+  180  ls
+  181  less Placenta.list 
+  182  ls
+  183  cd ..
+  184  ls
+  185  cd ../scilab/CC1-Placenta/gencove
+  186  ls
+  187  cd vcf
+  188  ls
+  189  cd ..
+  190  ls
+  191  cd merge_vcf/
+  192  ls
+  193  cd ..
+  194  ls
+  195  cd ..
+  196  ls
+  197  cd gencove_old_new/
+  198  ls
+  199  cd merge_vcf/
+  200  ls
+  201  cd ..
+  202  l
+  203  cd /nfs/rprdata/ALOFT/
+  204  ls
+  205  cd gencove
+  206  ls
+  207  cd merge_vcf/
+  208  ls
+  209  cd ../vcf/
+  210  ls
+  211  cd NewVCF-64+20-correction/
+  212  ls
+  213  cd ../NewVCF-64+20-corrected-addAF/
+  214  ls
+  215  less readme 
+  216  cd /nfs/rprdata/our10xData/counts/SCAIP-ALL-8.24.18/
+  217  ls
+  218  ls demuxlet
+  219  tail finished.txt 
+  220  head readme 
+  221  less demuxlet/SCAIP1*out.best|awk '$4=="SNG"{print}'|cut -f 5|sed 's/,.*//g'|sort|uniq -c
+  222  ls
+  223  cd demuxlet-4.1.19/
+  224  ls
+  225  less SCAIP1-ctrl.out.best 
+  226  less SCAIP1-ctrl.errout.txt 
+  227  ls
+  228  cd ..
+  229  ls
+  230  qme
+  231  qdel {384578..384595}
+  232  qme
+  233  ls
+  234  rm demuxlet/*
+  235  ls
+  236  rm demux.sh.e*
+  237  rm demux.sh.o*
+  238  ls
+  239  vi demux.sh
+  240  head readme
+  241  for i in `cat names.txt`; do while :; do if [ `qme | wc -l` -lt 120 ]; then qsub demux.sh -v sample=${i}; break; else sleep 1; fi; done; done
+  242  qme
+  243  ls finished.txt 
+  244  tail finished.txt 
+  245  less demuxlet/SCAIP1*out.best|awk '$4=="SNG"{print}'|cut -f 5|sed 's/,.*//g'|sort|uniq -c
+  246  less demuxlet/SCAIP2*out.best|awk '$4=="SNG"{print}'|cut -f 5|sed 's/,.*//g'|sort|uniq -c
+  247  less demuxlet/SCAIP3*out.best|awk '$4=="SNG"{print}'|cut -f 5|sed 's/,.*//g'|sort|uniq -c
+  248  qme
+  249  tail finished.txt 
+  250  less demuxlet/SCAIP4*out.best|awk '$4=="SNG"{print}'|cut -f 5|sed 's/,.*//g'|sort|uniq -c
+  251  pwd
+  252  head demux.sh
+  253  head demux*
+  254  ls demux*
+  255  ls
+  256  head old.demux.sh 
+  257  cd /nfs/rprdata/scilab/CC1-Placenta/
+  258  ls
+  259  cd gencove_merge_123/
+  260  ls
+  261  less Placenta.123.dupsRem.vcf.gz
+  262  module load demuxlet
+  263  popscle 
+  264  popscle demuxlet
+  265  popscle demuxlet --help
+  266  cd /nfs/rprdata/our10xData/counts/SCAIP-ALL-8.24.18/
+  267  less demux.sh
+  268  demuxlet
+  269  demuxlet --help
+  270  less demux.sh
+  271  popscle demuxlet --help
+  272  cd /nfs/rprdata/scilab/CC1-Placenta/
+  273  ls
+  274  cd gencove_merge_123/
+  275  ls
+  276  pwd
+  277  ls
+  278  mkdir gtcheck-plots
+  279  ls
+  280  cd ..
+  281  ls
+  282  cd gencove_merge_123/
+  283  ls
+  284  cd gtcheck.DupsRem-plots/
+  285  ls
+  286  cd /nfs/rprdata/MicroV/
+  287  ls
+  288  cd microV-180813/
+  289  ls
+  290  cd HisatAlignsTohg38/
+  291  ls
+  292  less total_reads.txt 
+  293  less all_counts.txt 
+  294  less *R
+  295  cd plots
+  296  ls
+  297  less DCM1R1_all_counts.R
+  298  cd ..
+  299  ls
+  300  cd TranscriptCnts/
+  301  ls
+  302  less coverageBed_2.25.0.sh
+  303  cd ..
+  304  ls
+  305  cd ..
+  306  ls
+  307  cd /nfs/rprdata/our10xData/
+  308  ls
+  309  cd fastq
+  310  ls
+  311  cd HWTGGBGXY/
+  312  ls
+  313  ls outs/
+  314  cd outs
+  315  ls fastq_path/
+  316  cd fastq_path/
+  317  ls
+  318  cd Reports/
+  319  ls
+  320  cd html/
+  321  ls
+  322  pwd
+  323  cd /nfs/rprdata/MicroV/
+  324  ls
+  325  cd microV-180813/
+  326  ls
+  327  cd /nfs/rprscratch/wwwShare/
+  328  ls
+  329  cd EDS
+  330  ls
+  331  ln -s /nfs/rprdata/ALOFT/ ALOFT
+  332  cd /nfs/rprdata/ALOFT/gencove.RNA.gc1.gc2
+  333  ls *R
+  334  less gtcheck.v2-dendr.R
+  335  qme
+  336  cd /nfs/rprdata/scilab/novogene/Analyses/ED3
+  337  ls
+  338  cd ClusterProfiler
+  339  ls
+  340  ls -l *pdf
+  341  cd Cond_Clusters_FC_KEGG/
+  342  ls
+  343  ls -l *pdf
+  344  cd /nfs/rprdata/scilab/novogene/Analyses/ED6
+  345  ls
+  346  cd PrimaryAnalysis/
+  347  ls
+  348  cd shinyapp_ED_dev/
+  349  ls
+  350  less app.R
+  351  ls
+  352  ls data
+  353  cp paperFigure1.PNG data/paperFigure1.png
+  354  ls data
+  355  less app.R
+  356  ls data
+  357  less app.R
+  358  ls
+  359  less app3.R
+  360  ls
+  361  ls data
+  362  less app.R
+  363  ls data
+  364  du -sh *png
+  365  du -sh data/*png
+  366  less app.R
+  367  less app3.R
+  368  ls
+  369  ls www
+  370  cp data/paperFigure1.png www/
+  371  cp app.R app5.R
+  372  less app.R
+  373  ls
+  374  less app.R
+  375  cd ..
+  376  cd shinyapp
+  377  cd data
+  378  ls
+  379  head conditions-all.txt 
+  380  head conditions-all.revNames.txt 
+  381  head conditions-all.txt 
+  382  head conditions-all.revNames.txt 
+  383  ls
+  384  less TNL_v_TIL-summary.txt
+  385  cd ..
+  386  cd shinyapp_ED_dev/
+  387  ls
+  388  ls data
+  389  cp data/locations-all.txt ../shinyapp/data/
+  390  cp data/MarkersAll.txt ../shinyapp/data/
+  391  ls data
+  392  cd data
+  393  mkdir REVISEDClusterNames
+  394  rm -r REVISEDClusterNames/
+  395  cd ..
+  396  cd shinyapp/data
+  397  ls
+  398  mkdir REVISEDClusterNames
+  399  cp *revNames.txt REVISEDClusterNames/
+  400  ls REVISEDClusterNames/
+  401  wc -l REVISEDClusterNames/
+  402  wc -l REVISEDClusterNames/*
+  403  ls
+  404  cd REVISEDClusterNames/
+  405  pwd
+  406  less *R
+  407  ls
+  408  cd ..
+  409  ls *R
+  410  less RevisedClusterNames.R 
+  411  cd /nfs/rprdata/ALOFT/gencove.RNA.gc1.gc2/
+  412  cat temp.txt 
+  413  ls
+  414  less merge.RNA.gencove.ALOFT.vcf.gz
+  415  less merged.AL.batch2019-03-22_R.vcf.gz
+  416  vi DNA.corrected.txt
+  417  pwd
+  418  cd /nfs/rprscratch/wwwShare/
+  419  ls
+  420  cd EDS/
+  421  ls
+  422  cd ALOFT/
+  423  ls
+  424  cd /nfs/rprdata/ALOFT/gencove.RNA.gc1.gc2/
+  425  grep all.pdf *R
+  426  grep -n all.pdf *R
+  427  less gtcheck.v2-dendr.R
+  428  ls -l *R
+  429  less gtcheck.v2-dendr.R
+  430  cp gtcheck.v2-dendr.R gtcheck.v2-dendr_ED1.R
+  431  mkdir plots_ED2/
+  432  less reanalysis_gtcheck.v2-dendr_ED2.R
+  433  ls
+  434  mkdir plots_ED3
+  435  ls plots_ED3
+  436  ls plots_ED2
+  437  ls -l plots_ED2/*
+  438  cd plots_ED3
+  439  ls
+  440  cd ..
+  441  ls
+  442  less outfile.txt 
+  443  ls outfile.txt 
+  444  less outfile.txt 
+  445  rm outfile.txt 
+  446  touch outfile.txt
+  447  ls outfile.txt
+  448  less outfile.txt 
+  449  grep AL-127 outfile.txt
+  450  grep AL-159 outfile.txt
+  451  less outfile.txt 
+  452  grep -n AL-159 outfile.txt 
+  453  grep -n AL-127 outfile.txt 
+  454  ls plots_ED3
+  455  ls -l plots_ED3/*
+  456  ls outfile.txt 
+  457  less outfile.txt 
+  458  grep -n AL-127 outfile2.txt 
+  459  grep -n AL-159 outfile2.txt 
+  460  less outfile3.txt 
+  461  grep AL-159 outfile3.txt
+  462  ls plots_ED3
+  463  cd plots_ED3
+  464  ls
+  465  pwd
+  466  cd /nfs/rprscratch/barreiro/singlecell/LB-GSC/
+  467  ls
+  468  mkdir fastq
+  469  cd fastq
+  470  ls
+  471  pwd
+  472  ls
+  473  vi temp
+  474  sed 's/\t/,/g' temp >barcodes.csv
+  475  less barcodes.csv 
+  476  vi demux.sh 
+  477  pwd
+  478  qsub -I -q wsuq -l nodes=1:ppn=20 -l mem=1000g
+  479  cd /nfs/rprdata
+  480  cd scilab/novogene/Analyses/
+  481  ls
+  482  cd ED6
+  483  ls
+  484  cd DEseq-standardModel/
+  485  ls
+  486  cd ../PrimaryAnalysis/Shin
+  487  cd ../PrimaryAnalysis/
+  488  ls
+  489  cd shinyapp
+  490  ls
+  491  cd data
+  492  ls
+  493  cd REVISEDClusterNames/
+  494  ls
+  495  cd ..
+  496  ln -l TNL*
+  497  ls -l TNL*
+  498  ls ../../../DEseq-standardModel/ConditionByCluster/DEgene_lists/
+  499  less ../../../DEseq-standardModel/ConditionByCluster/DEgene_lists/TNL_v_TIL-summary.txt
+  500  ls
+  501  wc -l TNL_v_TIL-summary.txt
+  502  ls
+  503  ln -s /nfs/rprdata/scilab/novogene/Analyses/ED3/outputs_DESeq_ConditionsByCluster_3Comps/TNL_v_PTL-summary.txt 
+  504  ls
+  505  mv TNL_v_PTL.revNames-summary.revNames.txt REVISEDClusterNames/
+  506  ls REVISEDClusterNames/
+  507  ls
+  508  mv *revNames.txt REVISEDClusterNames/
+  509  ls REVISEDClusterNames/
+  510  ls
+  511  cd REVISEDClusterNames/
+  512  ls
+  513  head TNL_v_TIL-summary.revNames.txt 
+  514  cut -f 2 TNL_v_TIL-summary.revNames.txt|sort_uniq -c 
+  515  cut -f 2 TNL_v_TIL-summary.revNames.txt|sort|uniq -c 
+  516  ls
+  517  mv TNL_v_PTL.revNames-summary.revNames.txt TNL_v_PTL-summary.revNames.txt
+  518  ls
+  519  less conditions-all.revNames.txt 
+  520  wc -l conditions-all.revNames.txt 
+  521  head conditions-all.revNames.txt 
+  522  cut -f 2 conditions-all.revNames.txt |sort_uniq -c
+  523  cut -f 2 conditions-all.revNames.txt |sort|uniq -c
+  524  cd ..
+  525  ln -s /nfs/rprdata/scilab/novogene/Analyses/ED3/outputs_DESeq_ConditionsByCluster_3Comps/TNL_v_PTL-all.txt 
+  526  head TNL_v_PTL-all.txt 
+  527  ls
+  528  head conditions-all.txt 
+  529  wc -l conditions-all.txt 
+  530  cut -f 2 conditions-all.txt |sort|uniq -c
+  531  ls
+  532  mv TNL_v_PTL.revNames-all.revNames.txt TNL_v_PTL-all.revNames.txt
+  533  mv TNL_v_PTL-all.revNames.txt REVISEDClusterNames/
+  534  cd REVISEDClusterNames/
+  535  ls
+  536  head TNL_v_PTL-all.revNames.txt 
+  537  wc -l TNL_v_PTL-all.revNames.txt 
+  538  head -n 145914 TNL_v_PTL-all.revNames.txt >t1
+  539  ls
+  540  cat conditions-all.revNames.txt t1 >conditions-ALL3Comps-all.revNames.txt
+  541  wc -l conditions-ALL3Comps-all.revNames.txt 
+  542  cut -f 2 conditions-ALL3Comps-all.revNames.txt |uniq -c
+  543  grep -n Compare conditions-ALL3Comps-all.revNames.txt 
+  544  head t1
+  545  wc -l t1
+  546  wc -l TNL_v_PTL-all.revNames.txt 
+  547  tail -n 145914 TNL_v_PTL-all.revNames.txt >t1
+  548  cat conditions-all.revNames.txt t1 >conditions-ALL3Comps-all.revNames.txt
+  549  cut -f 2 conditions-ALL3Comps-all.revNames.txt |uniq -c
+  550  pwd
+  551  ls
+  552  ls ../
+  553  ls
+  554  wc =l TNL_v_PTL-summary.revNames.txt 
+  555  cd ~/Lipovich/
+  556  ls
+  557  cd Gencode/
+  558  ls
+  559  wget ftp://ftp.ncbi.nlm.nih.gov/genomes/TOOLS/ORFfinder/linux-i64/ORFfinder.gz
+  560  ls
+  561  gunzip ORFfinder.gz 
+  562  ls
+  563  less ORFfinder 
+  564  ls
+  565  ORFfinder
+  566  . ORFfinder
+  567  du -sh *
+  568  ./ORFfinder
+  569  ls
+  570  cd ~
+  571  module load fastqc/0.11.8 
+  572  fastqc --help
+  573  cd /nfs/rprscratch/barreiro/singlecell/LB-GSC/fastq/H5T7WBGXB/outs/fastq_path/H5T7WBGXB/cez_sample1/fastqc-out/
+  574  ls
+  575  cd ..
+  576  ls
+  577  cd fastqc-out/
+  578  ls
+  579  cd ..
+  580  ls
+  581  cd /nfs/rprdata/scilab/novogene/counts
+  582  ls
+  583  cd s1DB
+  584  ls
+  585  cd ..
+  586  ls
+  587  less howto.txt 
+  588  less Makefile 
+  589  cd ..
+  590  ls
+  591  cd counts/
+  592  ls
+  593  cd SL6-2018-03-07/
+  594  ls
+  595  cd ..
+  596  ls
+  597  cd fastq
+  598  ls
+  599  less demux.sh
+  600  cd /nfs/rprdata/HOLD/HOLD1/
+  601  ls
+  602  . run.sh 
+  603  qme
+  604  ls bam
+  605  ls bams
+  606  ls fastqc-out/
+  607  qme
+  608  ls bams
+  609  ls
+  610  less align.sh.e405739
+  611  less align.sh.o405739
+  612  less align.sh
+  613  cat align.sh
+  614  ls
+  615  cd /nfs/rprscratch/
+  616  ls
+  617  cd wwwShare/
+  618  ls
+  619  ln -s /nfs/rprdata/HOLD
+  620  cd /nfs/rprdata/HOLD/HOLD1
+  621  ls
+  622  . run.sh 
+  623  qme
+  624  less align.sh 
+  625  vi align.sh
+  626  qme
+  627  ls bams2
+  628  rm bams2/*
+  629  . run.sh 
+  630  qme
+  631  ls bams2
+  632  ls -l bams2/*
+  633  ls bams2
+  634  less bams2/HO-007_S5_aligned.bam
+  635  less bams2/HO-007_S5_aligned.bam.E
+  636  less bams2/HO-007_S5_aligned.bam.e
+  637  qme
+  638  less bams2/HO-007_S5_aligned.bam.e
+  639  head bams2/HO-007_S5_aligned.bam.e
+  640  ls /nfs/rprdata/HOLD/HOLD1/fastq/HO-007_S5_*_R1_001.fastq.gz
+  641  ls /nfs/rprdata/HOLD/HOLD1/fastq/HO-007_S5_R1_001.fastq.gz 
+  642  cd bams2
+  643  ls
+  644  du -sh *bam
+  645  cd /nfs/rprdata/HOLD/HOLD1
+  646  ls
+  647  rm align.sh.e*
+  648  rm align.sh.o*
+  649  ls
+  650  ls bams2
+  651  . run.sh 
+  652  less align.sh
+  653  cd cd /nfs/rprdata/scilab/novogene/Analyses/ED6/PrimaryAnalysis/shinyapp/data
+  654  cd cd /nfs/rprdata/scilab/novogene/Analyses/ED6/PrimaryAnalysis/shinyapp/data/REVISEDClusterNames/
+  655  cd /nfs/rprdata/scilab/novogene/Analyses/ED6/PrimaryAnalysis/shinyapp/data/REVISEDClusterNames/
+  656  pwd
+  657  cd ..
+  658  ls
+  659  cd ..
+  660  ls
+  661  cd ED4.CCA
+  662  ls
+  663  less Novogene.CCA4_Indiv.R
+  664  less Novogene.CCA1.R
+  665  cd ..
+  666  cd our10xData/
+  667  ls
+  668  cd Analyses_ED/
+  669  ls
+  670  cd SCAIP-ALL-8.24.18/
+  671  ls
+  672  less Scaip_CCA1.2.R
+  673  less Scaip_CCA2.R 
+  674  cd /nfs/rprdata/HOLD/HOLD1
+  675  ls
+  676  cd bams
+  677  ls
+  678  ls HO-001*
+  679  cd ..
+  680  ls
+  681  cd bams
+  682  ls
+  683  less HO-001_S2_sorted_count.txt 
+  684  cd ..
+  685  ls
+  686  cd ..
+  687  ls
+  688  cd HOLD1
+  689  ls
+  690  ls fastq
+  691  ls -l fastq
+  692  ls bams
+  693  cd bams
+  694  ls
+  695  head HO-001_S2_bam.3
+  696  head HO-001_S2_bam.e
+  697  head HO-001_S2_aligned.bam.e
+  698  cd ..
+  699  ls
+  700  cd bams
+  701  ls
+  702  ls *R
+  703  less Unique_vs_RawReads.R 
+  704  less HO-001_S2_aligned.bam.e
+  705  less Unique_vs_RawReads.R 
+  706  ls Plots
+  707  rm -r Plots/Plots/
+  708  ls
+  709  less HO-001_S2_aligned.bam.e
+  710  less HO-001_S2_clean_count.txt 
+  711  cat HO-001_S2_clean_count.txt 
+  712  cat HO-001_S2_aligned.bam.e\
+  713  cat HO-001_S2_aligned.bam.e
+  714  cd ..
+  715  ls
+  716  ls -l fastq
+  717  qsub -I -q wsuq -l nodes=1:ppn=20 -l mem=400g
+  718  cd /nfs/rprdata/scilab/CC1-Placenta/
+  719  ls
+  720  cd gencove_new
+  721  ls
+  722  cd ba,
+  723  cd bam
+  724  ls
+  725  cd ..
+  726  ls
+  727  cd ..
+  728  ls
+  729  cd gencove_old_new/
+  730  ls
+  731  cd ../gencove
+  732  ls
+  733  cd bam
+  734  ls
+  735  less Telseq.out 
+  736  pwd
+  737  cd ..
+  738  cd ALOFT/
+  739  ls
+  740  cd gencove
+  741  ls
+  742  cd TELSEQ/
+  743  ls
+  744  qme
+  745  module load telseq
+  746  telseq
+  747  qsub -I -q wsuq -l nodes=1:ppn=2 -l mem=300g
+  748  ls
+  749  less output
+  750  cat output
+  751  cd ..
+  752  ls
+  753  cd ..
+  754  ls
+  755  cd gencove.AloftHoldPrb.2019-03-22/bam/TELSEQ/
+  756  less out.txt 
+  757  cat out.txt 
+  758  cd ..
+  759  cat LIST.txt 
+  760  cd /nfs/rprdata/our10xData/counts/SCAIP-ALL-8.24.18/
+  761  ls
+  762  ls 
+  763  ls demux*
+  764  ls
+  765  mv demuxlet demuxlet-NewVCF2XSNPs
+  766  mkdir demuxlet
+  767  vi demux.sh
+  768  rm finished.txt 
+  769  mkdir demuxlet
+  770  head readme 
+  771  for i in `cat names.txt`; do while :; do if [ `qme | wc -l` -lt 120 ]; then qsub demux.sh -v sample=${i}; break; else sleep 1; fi; done; done
+  772  qme
+  773  ls demuxlet
+  774  rm demuxlet/*
+  775  qme
+  776  less LIST.txt
+  777  tail names.txt
+  778  tail names.txt >names4.txt
+  779  for i in `cat names4.txt`; do while :; do if [ `qme | wc -l` -lt 120 ]; then qsub demux.sh -v sample=${i}; break; else sleep 1; fi; done; done
+  780  qme
+  781  head readme 
+  782  less demuxlet/SCAIP4*out.best|awk '$4=="SNG"{print}'|cut -f 5|sed 's/,.*//g'|sort|uniq -c
+  783  cd ..
+  784  cd ../ALOFT/gencove
+  785  ls
+  786  cd merge_vcf/
+  787  ls
+  788  cd ..
+  789  cd vcf
+  790  ls
+  791  cd NewVCF-2XSNPs-2samplesDeleted
+  792  less readme 
+  793  head readme
+  794  cd ..
+  795  ls
+  796  cd gencove.AloftHoldPrb.2019-03-22/
+  797  ls
+  798  cd vcf
+  799  ls
+  800  freenodes
+  801  qsub -I -q wsuq -l nodes=1:ppn=24 -l mem=1300g
+  802  ls
+  803  less merged.Placenta.vcf.gz 
+  804  cd ..
+  805  ls
+  806  cd gencove
+  807  ls
+  808  cd vcf
+  809  ls
+  810  cd ..
+  811  cd ../scilab/CC1-Placenta/
+  812  ls
+  813  cd gencove_old_new/
+  814  ls
+  815  ls ../counts/
+  816  ls
+  817  cd mer
+  818  cd merge_vcf/
+  819  ls
+  820  cd ED_merged_vcf/
+  821  ls
+  822  history
+  823  qsub -I -q wsuq -l nodes=1:ppn=4 -l mem=300g
+  824  ls
+  825  cd ..
+  826  ls
+  827  du -sh *gz
+  828  ls
+  829  cd /nfs/rprdata/scilab/CC1-Placenta/gencove_old_new/merge_vcf/
+  830  ls
+  831  qsub -I -q wsuq -l nodes=1:ppn=2 -l mem=100g
+  832  qsub -I -q wsuq -l nodes=1:ppn=2 -l mem=80g
+  833  ls
+  834  cd ..
+  835  cd ALOFT/
+  836  ls
+  837  cd gencove
+  838  ls
+  839  cd vcf
+  840  ls
+  841  cd ..
+  842  cd ../scilab/CC1-Placenta/
+  843  ls
+  844  cd gencove_merge_123/
+  845  ls
+  846  pwd
+  847  ls
+  848  less *txt
+  849  freenodes
+  850  qsub -I -q wsuq -l nodes=1:ppn=16 -l mem=1260g
+  851  ls
+  852  ls *csi
+  853  less Placenta123.KeepDups.vcf.gz 
+  854  freenodes
+  855  qsub -I -q wsuq -l nodes=1:ppn=16 -l mem=1260g
+  856  qsub -I -q wsuq -l nodes=1:ppn=4 -l mem=100g
+  857  cd /nfs/rprdata/scilab/novogene/
+  858  ls
+  859  cd Analyses/
+  860  ls
+  861  cd ED5
+  862  ls
+  863  ls GeneLists/
+  864  cd ..
+  865  cd ED5
+  866  ls outputs1/
+  867  c d..
+  868  cd ..
+  869  ls
+  870  cd ED3
+  871  ls
+  872  ls outputs_DESeq_ConditionsByCluster_3Comps/
+  873  cd outputs_DESeq_ConditionsByCluster_3Comps/
+  874  wc -l TNL_v_TIL-summary.txt 
+  875  less makesummary.sh 
+  876  head makesummary.sh 
+  877  sed 's/TN_v_TL/TN_PL/g' makesummary.sh >makesummary2.sh
+  878  . makesummary2.sh 
+  879  sed 's/TN_v_TL/TN_v_PL/g' makesummary.sh >makesummary2.sh
+  880  . makesummary2.sh 
+  881  tail makesummary.sh
+  882  ls
+  883  less makesummary2.sh 
+  884  vi makesummary2.sh 
+  885  less makesummary.sh 
+  886  head -n 7 makesummary.sh >makesummary2.sh
+  887  vi makesummary2.sh 
+  888  . makesummary2.sh 
+  889  ls
+  890  wc -l TNL_v_PTL-summary.txt 
+  891  less TNL_v_PTL-summary.txt 
+  892  less makesummary.sh 
+  893  vi makeALL.sh
+  894  . makeALL.sh 
+  895  ls -l
+  896  wc -l TNL_v_PTL-all.txt 
+  897  less TNL_v_PTL-all.txt 
+  898  ls
+  899  cd /nfs/rprdata/scilab/novogene/Analyses/ED6
+  900  ls
+  901  cd PrimaryAnalysis/
+  902  ls
+  903  cd shinyapp
+  904  ls
+  905  cd data
+  906  ls
+  907  less TNL_v_PTL-all.txt 
+  908  cd REVISEDClusterNames/
+  909  ls
+  910  less TNL_v_PTL-all.revNames.txt 
+  911  tail TNL_v_PTL-all.revNames.txt 
+  912  head TNL_v_PTL-all.revNames.txt 
+  913  cd ..
+  914  ls
+  915  head TNL_v_PTL-all.txt 
+  916  tail TNL_v_PTL-all.txt 
+  917  ls
+  918  qsub -I -q wsuq -l nodes=1:ppn=4 -l mem=100g
+  919  cd ..
+  920  ls
+  921  cd FeaturePlots/
+  922  grep mkdir *R
+  923  cd /nfs/rprdata/HOLD/HOLD1b
+  924  ls
+  925  ls fastqc-out/
+  926  cd ..
+  927  ls
+  928  cd HOLD1
+  929  ls
+  930  cp align.sh ../HOLD1b
+  931  cp run.sh ../HOLD1b
+  932  mkdir bams
+  933  ls ../HOLD1b
+  934  cd ../HOLD1b
+  935  ls
+  936  . run.sh 
+  937  qme
+  938  ls
+  939  head align.sh.e411880 
+  940  head align.sh.o411880 
+  941  ls bams
+  942  ls fastqs
+  943  ls
+  944  rm align.sh.e*
+  945  rm align.sh.o*
+  946  less align.sh 
+  947  ls
+  948  . run.sh 
+  949  qme
+  950  less align.sh 
+  951  cat align.sh 
+  952  cat run.sh
+  953  qme
+  954  ls bams
+  955  qme
+  956  cd ../HOLD1/bams
+  957  ls
+  958  cp Plot_ALL_ED1.R ../../HOLD1b/bams/
+  959  less Plot_ALL_ED1.R
+  960  cd ..
+  961  ls
+  962  cd bams
+  963  ls
+  964  less Plot_ALL_ED1.R
+  965  qme
+  966  cd ..
+  967  cd ../HOLD1b
+  968  ls
+  969  rm multiqc_report.html 
+  970  rm -r multiqc_data/
+  971  qme
+  972  less align.sh
+  973  ssh -g -4 -nTL 9094:wsu182:8765 -N warrior
+  974  cd /nfs/rprdata/HOLD/HOLD-eg/bams
+  975  ls
+  976  rm *
+  977  cp ../../HOLD1/bams/* .
+  978  cp ../../HOLD1/bams-hg19/* .
+  979  ls
+  980  cd ..
+  981  ls
+  982  tail PipelineUtils.sh 
+  983  PlotBamQC
+  984  exit
+  985  jobs
+  986  ls
+  987  exit
+  988  module load python/3.7
+  989  cd /nfs/rprdata/ALOFT/AL6
+  990  ls
+  991  multiqc fastqs/
+  992  ls
+  993  vi runMultiQC.sh
+  994  exit
+  995  cd ${rtdir{
+  996  cd ${rtdir}
+  997  ls
+  998  pwd
+  999  qsub -I -l select=1:ncpus=4:mem=20gb 
+ 1000  ls
+ 1001  qsub -I -l select=1:ncpus=4:mem=100gb 
+ 1002  cd piquelab/ED/SeqPipelineUtils/
+ 1003  ls
+ 1004  cd PiUtils/
+ 1005  ls
+ 1006  vi alignInit.sh 
+ 1007  vi PipelineUtils.sh 
+ 1008  vi alignInit.sh 
+ 1009  qme
+ 1010  ls
+ 1011  cd ..
+ 1012  cp -r PiUtils/ PiUtils-5.5.19/
+ 1013  ls
+ 1014  cd PiUtils
+ 1015  ls
+ 1016  less makeCountMatrix.sh 
+ 1017  less PipelineUtils.sh 
+ 1018  if [ `qme | wc -l` -lt 110 ]; then qsub PiUtils/HTcnt.sh -v Sample=${i},rtdir="$rtdir"; sleep 3;break; else sleep 1; fi; donePipelineUtils.sh
+ 1019  ls
+ 1020  vi PipelineUtils.sh 
+ 1021  cd ..
+ 1022  cp -r PiUtils /nfs/rprdata/ALOFT/AL2.ED.eg/
+ 1023  cd PiUtils
+ 1024  vi PipelineUtils.sh 
+ 1025  cd ..
+ 1026  cp -r PiUtils /nfs/rprdata/ALOFT/AL2.ED.eg/
+ 1027  qme
+ 1028  cd PiUtils
+ 1029  vi PipelineUtils.sh 
+ 1030  qme
+ 1031  cd -r ../PiUtils /nfs/rprdata/ALOFT/AL2.ED.eg/
+ 1032  cp -r ../PiUtils /nfs/rprdata/ALOFT/AL2.ED.eg/
+ 1033  qme
+ 1034  ls
+ 1035  vi Plot_ALL.R 
+ 1036  less PipelineUtils.sh 
+ 1037  less Plot_ALL.R 
+ 1038  ls
+ 1039  vi mergeAligns.sh 
+ 1040  cp -r ../PiUtils /nfs/rprdata/ALOFT/AL2.ED.eg/
+ 1041  vi mergeAligns.sh 
+ 1042  less mergeAligns.sh 
+ 1043  vi alignInit.sh 
+ 1044  vi mergeAligns.sh 
+ 1045  less Plot_ALL.R 
+ 1046  ls bams
+ 1047  ls
+ 1048  vi PipelineUtils.sh 
+ 1049  cp Plot_ALL.R Plot_MERGED.R 
+ 1050  vi Plot_MERGED.R 
+ 1051  vi PipelineUtils.sh 
+ 1052  cp RunPlots.sh RunPlots_MERGED.sh
+ 1053  vi RunPlots_MERGED.sh 
+ 1054  ls
+ 1055  vi Plot_MERGED.R 
+ 1056  vi Plot_ALL.R 
+ 1057  cp -r ../PiUtils /nfs/rprdata/ALOFT/AL2.ED.eg/
+ 1058  vi PipelineUtils.sh 
+ 1059  ls
+ 1060  vi PipelineUtils.sh 
+ 1061  vi Plot_ALL.R 
+ 1062  cp -r ../PiUtils /nfs/rprdata/ALOFT/AL2.ED.eg/
+ 1063  vi alignInit.sh 
+ 1064  ls
+ 1065  less Plot_MERGED.R 
+ 1066  ls
+ 1067  head Plot_ALL.R 
+ 1068  head Plot_MERGED.R 
+ 1069  ls
+ 1070  head RunPlots_MERGED.sh 
+ 1071  ls
+ 1072  mv RunPlots RunPlots_INDIV.sh
+ 1073  mv RunPlots.sh RunPlots_INDIV.sh
+ 1074  vi PipelineUtils.sh 
+ 1075  cp -r ../PiUtils /nfs/rprdata/ALOFT/AL2.ED.eg/
+ 1076  ls
+ 1077  vi Plot_MERGED.R 
+ 1078  cp -r ../PiUtils /nfs/rprdata/ALOFT/AL2.ED.eg/
+ 1079  vi Plot_MERGED.R 
+ 1080  cp -r ../PiUtils /nfs/rprdata/ALOFT/AL2.ED.eg/
+ 1081  vi Plot_MERGED.R 
+ 1082  cp -r ../PiUtils /nfs/rprdata/ALOFT/AL2.ED.eg/
+ 1083  vi Plot_MERGED.R 
+ 1084  cp -r ../PiUtils /nfs/rprdata/ALOFT/AL2.ED.eg/
+ 1085  qme
+ 1086  cp -r ../PiUtils /nfs/rprdata/ALOFT/AL2.ED.eg/
+ 1087  ls
+ 1088  vi Plot_MERGED.R 
+ 1089  pwd
+ 1090  ls
+ 1091  less mergeAligns.sh 
+ 1092  vi mergeAligns.sh 
+ 1093  cp -r ../PiUtils /nfs/rprdata/ALOFT/AL2.ED.eg/
+ 1094  ls
+ 1095  vi PipelineUtils.sh 
+ 1096  cd ..
+ 1097  cp -r ../PiUtils /nfs/rprdata/ALOFT/AL2.ED.eg/
+ 1098  cp -r PiUtils /nfs/rprdata/ALOFT/AL2.ED.eg/
+ 1099  cd PiUtils
+ 1100  vi PipelineUtils.sh 
+ 1101  cd ..
+ 1102  cp -r PiUtils /nfs/rprdata/ALOFT/AL2.ED.eg/
+ 1103  history >t1
