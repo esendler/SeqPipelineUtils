@@ -10,8 +10,8 @@ PiUtils folder contains
 
 Pi_Setup
 Pi_runFastQC
-Pi_runAlign
-Pi_PlotBamQC
+Pi_AlignAsSingles  OR  (if multiple runs...) Pi_AlignPreMerge > Pi_MergeAligns
+Pi_PlotBamQC_indiv  OR PlotBamQC_merged
 Pi_runHTcount
 Pi_CountMatrix
 Pi_runMultiQC
