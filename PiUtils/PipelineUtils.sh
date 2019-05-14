@@ -2,7 +2,7 @@
 function Pi_Setup {
 	#mkdir bams
 	#mkdir counts
-	ls fastqs/*R1*|sed 's/_R1.*//g'|grep -v PhiX|grep -v Undetermined| sed 's/fastqs\///g'>names_ind.txt
+	ls fastqs/*_R1*|sed 's/_R1.*//g'|grep -v PhiX|grep -v Undetermined| sed 's/fastqs\///g'>names_ind.txt
 	#rtdir=$(pwd)
 	#  names2 are names.txt - stripped of _L#, to get unique sample names for merging...
         sed 's/_L.*//g' names.txt|sort|uniq >names.txt
